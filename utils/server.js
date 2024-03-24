@@ -8,7 +8,9 @@ import utilLib from "./lib.js";
 import utilLogger from "./logger.js";
 
 /* Routers */
-import index from "../routers/index/index.js";
+import routerIndex from "../routers/index/index.js";
+import routerProjects from "../routers/projects/index.js";
+import routerContact from "../routers/contact/index.js";
 
 /* Non-Exports */
 const app = express();
@@ -20,7 +22,9 @@ const useMiddleware = () => {
 }
 
 const useRouters = () => {
-  router.use('/', index);
+  router.use('/', routerIndex);
+  router.use('/projects', routerProjects);
+  router.use('/contact', routerContact);
 }
 
 const useErrorHandlers = () => {

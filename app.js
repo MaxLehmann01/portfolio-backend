@@ -9,5 +9,5 @@ import utilMongoDB from "./utils/mongodb.js";
 import utilServer from "./utils/server.js"
 
 /* Connections */
-// utilMongoDB.init();
+utilMongoDB.init();
 utilServer.init();
