@@ -32,14 +32,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
-      - name: Install SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Copy docker-Compose.yml
-        run: scp -o StrictHostKeyChecking=no ./docker/docker-compose.yml ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }}:~/deployment/portfolio/backend
+      - name: Copy docker-compose.yml
+        run: cp ./docker/docker-compose.yml :~/deployment/portfolio/backend
 
       - name: Run docker-compose.yml
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} "cd ~/deployment/portfolio/backend && docker-compose pull && docker-compose up -d"
+        run: cd ~/deployment/portfolio/backend && docker-compose pull && docker-compose up -d

@@ -1,15 +1,13 @@
 version: '3'
 
 services:
-  production.portfolio-backend:
-    image: docker.5vv5404h4uiv.com/portfolio-backend:production
+  portfolio-backend:
+    image: maxlehmann01/portfolio-backend:production
     container_name:  production.portfolio-backend
     ports:
-      - "5010:3000"
+      - "3000:3000"
     restart: always
     volumes:
-      - /etc/ssl/certs/root.pem:/usr/src/app/root.pem
-      - ~/portfolio/backend/.env:/usr/src/app/.env
+      - ~/deployment/portfolio/backend/.env:/usr/src/app/.env
     environment:
-      - NODE_EXTRA_CA_CERTS=/usr/src/app/root.pem
       - TZ=Europe/Berlin
