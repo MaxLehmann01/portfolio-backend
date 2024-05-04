@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Copy docker-compose.yml
-        run: cp ./docker/docker-compose.yml :~/deployment/portfolio/backend
+        run: cp ./docker/docker-compose.yml ~/deployment/portfolio/backend
 
       - name: Run docker-compose.yml
         run: cd ~/deployment/portfolio/backend && docker-compose pull && docker-compose up -d
