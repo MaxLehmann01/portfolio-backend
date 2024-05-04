@@ -24,7 +24,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: portfolio-backend:production
+          tags: ${{ secrets.DOCKER_REGISTRY_USER }}/portfolio-backend:production
     
   deploy-image:
     needs: build-image
