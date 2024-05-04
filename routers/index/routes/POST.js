@@ -13,7 +13,7 @@ export default async (req, res, next) => {
 
     const responseIpInfo = await axios.get(`https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`);
 
-    const visit = new Visit(responseIpInfo.data);
+    const visit = new Visit({ ...responseIpInfo.data, timestamp: new Date() });
     await visit.save();
 
     res.sendStatus(200);

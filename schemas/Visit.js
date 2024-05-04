@@ -11,5 +11,9 @@ export default mongoose.model('Visit', new mongoose.Schema({
   loc: String,
   org: String,
   postal: String,
-  timezone: String
+  timezone: String,
+  timestamp: {
+    type: Date,
+    required: true
+  }
 }));
