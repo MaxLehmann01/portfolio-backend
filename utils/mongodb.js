@@ -9,8 +9,6 @@ var connection;
 
 /* Direct-Exports */
 export const init = () => {
-  console.log(process.env);
-
   if(process.env.MONGO_TLS !== "true" && process.env.MONGO_TLS !== "false") {
     logger.error('Invalid value for MONGO_TLS environment variable. Please set it to either "true" or "false".', 'error');
     process.exit(1);
