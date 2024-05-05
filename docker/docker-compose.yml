@@ -9,5 +9,6 @@ services:
     restart: always
     volumes:
       - ~/deployment/portfolio/backend/.env:/usr/src/app/.env
+      - ~/deployment/portfolio/backend/logs/:/usr/src/app/logs
     environment:
       - TZ=Europe/Berlin
