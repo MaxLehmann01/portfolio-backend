@@ -13,6 +13,8 @@ export default async (req, res, next) => {
 
     const responseIpInfo = await axios.get(`https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`);
 
+    if(responseIpInfo.hostname.includes('google')) return res.sendStatus(200);
+
     const visit = new Visit({ ...responseIpInfo.data, timestamp: new Date() });
     await visit.save();
 
