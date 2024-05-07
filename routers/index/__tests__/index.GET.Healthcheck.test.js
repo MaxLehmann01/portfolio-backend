@@ -2,7 +2,7 @@
 import request from "supertest";
 
 /* Tests */
-describe("GET /", () => {
+describe("GET /healthcheck", () => {
   const server = global.__SERVER__;
 
   it('sending healthcheck', async () => {
