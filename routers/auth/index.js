@@ -6,18 +6,18 @@ import jwtMiddleware from "../../middleware/jwtMiddleware.js";
 
 /* Routes */
 import GET from "./routes/GET.js";
-import DELETE from "./routes/DELETE.js";
-import PUT from "./routes/PUT.js";
-import POST from "./routes/POST.js";
+import POSTAuthorize from "./routes/POST-Authorize.js";
+import POSTToken from "./routes/POST-Token.js";
+import DELETE from "./routes/DELETE.js"
 
 /* Constants */
 const router = express.Router();
 
 /* Router-Definition */
 router.get('/', jwtMiddleware, GET);
-router.post('/', jwtMiddleware, POST);
-router.put('/:id', jwtMiddleware, PUT);
-router.delete('/:id', jwtMiddleware, DELETE);
+router.post('/authorize', POSTAuthorize);
+router.post('/token', POSTToken);
+router.delete('/', DELETE);
 
 /* Default-Export */
 export default router;

@@ -8,26 +8,29 @@ export default mongoose.model('Project', new mongoose.Schema({
     required: true,
     unique: true
   },
-  descriptions: [{
-    lang: {
+  descriptions: {
+    en: {
       type: String,
-      required: true,
-      enum: ['en', 'de']
+      required: true
     },
-    content: {
+    de: {
       type: String,
       required: true
     }
-  }],
-  banner: {
+  },
+  banner: { 
+    filename: {
+      type: String,
+      required: true
+    }, 
+    base64: {
+      type: String,
+      required: true
+    }, 
     type: {
       type: String,
       required: true
-    },
-    data: {
-      type: Buffer,
-      required: true
-    }
+    } 
   },
   repositories: [{
     name: {

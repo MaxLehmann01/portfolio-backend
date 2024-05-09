@@ -7,15 +7,19 @@ export default mongoose.model('Tech', new mongoose.Schema({
     type: String,
     required: true
   },
-  icon: {
+  icon: { 
+    filename: {
+      type: String,
+      required: true
+    }, 
+    base64: {
+      type: String,
+      required: true
+    }, 
     type: {
       type: String,
       required: true
-    },
-    data: {
-      type: Buffer,
-      required: true
-    }
+    } 
   },
   url: String
 }));

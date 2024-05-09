@@ -6,9 +6,9 @@ import jwtMiddleware from "../../middleware/jwtMiddleware.js";
 
 /* Routes */
 import GET from "./routes/GET.js";
-import DELETE from "./routes/DELETE.js";
-import PUT from "./routes/PUT.js";
 import POST from "./routes/POST.js";
+import PUT from "./routes/PUT.js";
+import DELETE from "./routes/DELETE.js";
 
 /* Constants */
 const router = express.Router();

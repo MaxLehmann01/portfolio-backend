@@ -6,10 +6,11 @@ import Tech from "../../../schemas/Tech.js";
 export default async (req, res, next) => {
   try {
     let resData = { httpStatus: 500, data: { err: undefined }};
+    const { id: _id } = req.params;
+    const { name, descriptions, banner, repositories, version, urls, techs } = req.body;
 
-    const projects = await Project.find();
+    await Project.findByIdAndUpdate(_id, { name, descriptions, banner, repositories, version, urls, techs, timestamp: new Date() });
 
-    resData.data = projects;
     resData.httpStatus = 200;
     res.status(resData.httpStatus).json(resData.data);
   } catch (err) {
