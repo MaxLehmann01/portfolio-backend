@@ -17,7 +17,6 @@ import routerProjects from "../routers/projects/index.js";
 import routerContacts from "../routers/contacts/index.js";
 import routerTechs from "../routers/techs/index.js";
 import routerVisits from "../routers/visits/index.js";
-import routerMisc from "../routers/misc/index.js";
 
 /* Non-Exports */
 const app = express();
@@ -38,7 +37,6 @@ const useRouters = () => {
   router.use('/contacts', routerContacts);
   router.use('/techs', routerTechs);
   router.use('/visits', routerVisits);
-  router.use('/misc', routerMisc);
 }
 
 const useErrorHandlers = () => {
