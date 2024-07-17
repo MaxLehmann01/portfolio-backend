@@ -2,13 +2,13 @@ version: '3'
 
 services:
   portfolio-backend:
-    image: maxlehmann01/portfolio-backend:latest
+    image: docker.5vv5404h4uiv.com/portfolio-backend:latest
     container_name: portfolio-backend
     ports:
-      - "3000:3000"
+      - "3205:3000"
     restart: always
     volumes:
-      - ~/deployment/portfolio/backend/.env:/usr/src/app/.env
-      - ~/deployment/portfolio/backend/logs/:/usr/src/app/logs
+      - /root/portfolio/backend/.env:/usr/src/app/.env
+      - /root/portfolio/backend/logs/:/usr/src/app/logs
     environment:
       - TZ=Europe/Berlin
