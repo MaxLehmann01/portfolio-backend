@@ -22,11 +22,10 @@ import routerVisits from "../routers/visits/index.js";
 const app = express();
 const router = express.Router();
 const useMiddleware = () => {
-  // app.use(express.json());
   app.use(cors(utilLib.getCorsOpts()));
   app.use(cookieParser());
   app.use(bodyParser.json({ limit: '100mb' }))
-  app.use(router);
+  app.use('/api', router);
 }
 
 const useRouters = () => {
